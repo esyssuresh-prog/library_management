@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IET Lucknow Library - Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<header class="classic-header">
+    <img src="logo1.png" class="logo left" alt="IET Logo">
+    <h1>IET Lucknow - Library Management System</h1>
+    <img src="logo2.png" class="logo right" alt="Library Logo">
+</header>
+
+<nav class="classic-navbar">
+    <a onclick="showPage('home')"><i class="fas fa-home"></i> Home</a>
+    <a onclick="showPage('ebooks')"><i class="fas fa-book-open"></i> E-Books</a>
+    <a onclick="showPage('photos')"><i class="fas fa-images"></i> Photos</a>
+    <a onclick="showPage('contact')"><i class="fas fa-envelope"></i> Contact Us</a>
+    <a onclick="showPage('loginPortal')" id="navLogin"><i class="fas fa-user-circle"></i> Login Portal</a>
+</nav>
+
+<section id="home" class="page active fade">
+    <div class="hero-card card">
+        <h1>Welcome to IET Lucknow Library</h1>
+        <p>Your portal to Knowledge, Books, and Smarter Learning.</p>
+        <button onclick="showPage('ebooks')" class="classic-btn">Search E-Books</button>
+    </div>
+
+    <div id="mainNotice" class="classic-notice">
+        📢 New Books Available | Return on time | Fine ₹2/day
+    </div>
+
+    <div class="classic-stats-grid">
+        <div class="stat-box f1">📗 Easy Book Issue</div>
+        <div class="stat-box f2">⏰ Smart Reminder</div>
+        <div class="stat-box f3">💰 Auto Fine System</div>
+    </div>
+</section>
+
+ <section id="ebooks" class="page fade">
+    <div class="classic-ebook-layout">
+        <div class="filter-panel card">
+            <h3>Refine by Category</h3>
+            <div class="filter-btn-group">
+                <button class="filter-btn active" onclick="filterBooks('All')">All Categories</button>
+                <button class="filter-btn" onclick="filterBooks('CSE')">CSE</button>
+                <button class="filter-btn" onclick="filterBooks('ECE')">ECE</button>
+                <button class="filter-btn" onclick="filterBooks('EE')">EE</button>
+                <button class="filter-btn" onclick="filterBooks('ME')">ME</button>
+                <button class="filter-btn" onclick="filterBooks('CIVIL')">CIVIL</button>
+                <button class="filter-btn" onclick="filterBooks('CHEMICAL')">CHEMICAL</button>
+            </div>
+        </div>
+
+        <div class="ebook-main">
+            <div class="search-classic card">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchBook" placeholder="Search by title, branch, or tag..." onkeyup="searchBooks()">
+            </div>
+            
+            <div class="classic-book-grid" id="bookContainer">
+                <div class="classic-book-card card" data-category="CSE">
+                    <div class="book-icon"><i class="fas fa-laptop-code" style="color: #007bff;"></i></div>
+                    <h3>DSA Guide</h3>
+                    <p>Branch: CSE</p>
+                    <a href="pdfs/DSA Guide.pdf">Read Pdf</a>
+                </div>
+                <div class="classic-book-card card" data-category="CSE">
+                    <div class="book-icon"><i class="fas fa-cogs" style="color: #007bff;"></i></div>
+                    <h3>DBMS</h3>
+                    <p>Branch: CSE</p>
+                    <a href="pdfs/DBMS.pdf">Read Pdf</a>
+            </div>
+            <div class="classic-book-card card" data-category="CSE">
+                    <div class="book-icon"><i class="fas fa-cogs" style="color: #007bff;"></i></div>
+                    <h3>JAVA</h3>
+                    <p>Branch: CSE</p>
+                    <a href="pdfs/JAVA.pdf">Read Pdf</a>
+            </div>
+            <div class="classic-book-card card" data-category="CSE">
+                    <div class="book-icon"><i class="fas fa-cogs" style="color: #007bff;"></i></div>
+                    <h3>Operating System</h3>
+                    <p>Branch: CSE</p>
+                    <a href="pdfs/Operating System.pdf">Read Pdf</a>
+            </div>
+            <div class="classic-book-card card" data-category="CSE">
+                    <div class="book-icon"><i class="fas fa-cogs" style="color: #007bff;"></i></div>
+                    <h3>Python</h3>
+                    <p>Branch: CSE</p>
+                    <a href="pdfs/Python.pdf">Read Pdf</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="photos" class="page fade">
+    <div class="card gallery-container">
+        <h2>Gallery</h2>
+        <div class="classic-gallery-grid">
+            <img src="images/photo1.jpg" alt="Library Interior 1">
+            <img src="images/photo2.jpg" alt="Library Interior 2">
+            <img src="images/photo3.jpg" alt="Library Reading Area">
+            <img src="images/photo4.jpg" alt="Stack Area 1">
+            <img src="images/photo5.jpeg" alt="Stack Area 2">
+            <img src="images/photo6.jpeg" alt="Issue Counter">
+            <img src="images/photo7.jpeg" alt="Library Interior 3">
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="page fade">
+    <div class="card contact-card">
+        <h2>Contact Us</h2>
+        <p>Connect with us for any queries or assistance.</p>
+        <p><strong>Email:</strong> library@ietlucknow.com</p>
+        <div class="message-box-container">
+            <textarea id="contactMsg" placeholder="Write your message here..."></textarea>
+            <button class="classic-btn" onclick="sendContactMsg()">Send Message</button>
+        </div>
+    </div>
+</section>
+
+<section id="loginPortal" class="page fade">
+    <div class="card login-choice-card">
+        <h2>Library Access Portal</h2>
+        <div class="choice-grid">
+            <div class="choice-box" onclick="initiateAuth('student')">
+                <i class="fas fa-user-graduate"></i>
+                <h3>Student Login</h3>
+            </div>
+            <div class="choice-box" onclick="initiateAuth('admin')">
+                <i class="fas fa-user-shield"></i>
+                <h3>Admin Login</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="authPage" class="page fade">
+    <div class="card auth-card">
+        <h2 id="authTitle">Login</h2>
+        <div id="otpStep1">
+            <input type="text" id="loginName" placeholder="Full Name">
+            <input type="email" id="loginEmail" placeholder="Email Address">
+            <input type="text" id="loginID" placeholder="Roll No / Admin ID">
+            <button onclick="sendVerificationOTP()" class="classic-btn">Send OTP</button>
+        </div>
+        <div id="otpStep2" style="display:none;">
+            <p>Verification code sent to your email.</p>
+            <input type="text" id="otpInput" placeholder="Enter 6-digit OTP">
+            <button onclick="verifyAndLogin()" class="classic-btn">Verify & Access</button>
+        </div>
+        <button onclick="showPage('loginPortal')" class="back-link">← Back</button>
+    </div>
+</section>
+
+<section id="adminDashboard" class="page fade">
+    <div class="card">
+        <h2>ADMIN Dashboard</h2>
+        <div class="admin-menu-btns">
+            <button onclick="showPage('issueFormPage')" class="menu-btn-dark">Issue Book</button>
+            <button onclick="showPage('issuedLogsPage')" class="menu-btn-dark">Issued Books Log</button>
+            <button onclick="logout()" class="menu-btn-red">Logout</button>
+        </div>
+    </div>
+</section>
+
+<section id="issueFormPage" class="page fade">
+    <div class="card form-card">
+        <h2>Issue New Book</h2>
+        <input type="text" id="stName" placeholder="Student Name">
+        <input type="text" id="stRoll" placeholder="Roll Number">
+        <input type="email" id="stEmail" placeholder="Student Email">
+        <input type="text" id="stBook" placeholder="Book Name">
+        <label>Issue Date</label>
+        <input type="date" id="stIssueDate">
+        <label>Return Date</label>
+        <input type="date" id="stReturnDate">
+        <button onclick="saveIssueRecord()" class="classic-btn">Submit</button>
+        <button onclick="showPage('adminDashboard')" class="back-btn">Back</button>
+    </div>
+</section>
+
+<section id="issuedLogsPage" class="page fade">
+    <div class="card log-card">
+        <h2>Issued Books Log</h2>
+        <div class="filter-bar">
+            <select id="timeFilter" onchange="renderAdminTable(this.value)">
+                <option value="all">All Records</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+        </div>
+        <table class="classic-table">
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Book</th>
+                    <th>Return Date</th>
+                    <th>Status</th>
+                    <th>Fine</th>
+                    <th>Action</th> </tr>
+            </thead>
+            <tbody id="bookList"></tbody>
+        </table>
+        <button onclick="showPage('adminDashboard')" class="back-btn">Back to Dashboard</button>
+    </div>
+</section>
+
+<section id="studentDashboard" class="page fade">
+    <div class="card">
+        <h2>My Issued Books</h2>
+        <div id="studentProfile" class="student-meta"></div>
+        <table class="classic-table">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Fine</th>
+                    <th>Action</th> </tr>
+            </thead>
+            <tbody id="studentBookList"></tbody>
+        </table>
+        <button onclick="logout()" class="menu-btn-red">Logout</button>
+    </div>
+</section>
+
+<div id="paymentModal" class="modal">
+    <div class="card modal-content">
+        <h3>Scan to Pay Fine</h3>
+        <img src="qr.jpeg" alt="Payment QR" style="width: 200px; margin: 20px auto; display: block; border-radius: 10px;">
+        <p>After successful payment, click confirm to clear your record.</p>
+        <div style="display:flex; gap:10px; justify-content:center;">
+            <button onclick="confirmPayment()" class="classic-btn" style="background:#28a745;">Confirm Payment</button>
+            <button onclick="closeModal()" class="back-btn" style="margin-top:0;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

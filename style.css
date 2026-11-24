@@ -1,0 +1,126 @@
+/* --- Global Styles & Header (Unchanged) --- */
+body { margin: 0; font-family: 'Poppins', sans-serif; background: #f4f7f6; color: #333; }
+.classic-header { background: #083059; color: white; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px; }
+.logo { width: 55px; position: absolute; }
+.left { left: 20px; } .right { right: 20px; }
+
+/* --- Navbar (Modified 'Logout' style) --- */
+.classic-navbar { background: #fff; text-align: center; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.classic-navbar a { margin: 0 15px; cursor: pointer; font-weight: 600; color: #083059; font-size: 14px; text-decoration: none; display: inline-block; padding-bottom: 5px; }
+.classic-navbar a i { margin-right: 5px; color: #007bff; }
+.classic-navbar a:hover, .classic-navbar a.nav-active { color: #007bff; border-bottom: 2px solid #007bff; }
+
+/* --- Page & Card Structure --- */
+.page { display: none; padding: 30px; }
+.active { display: block; }
+.card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.08); margin: auto; max-width: 900px; }
+
+/* --- HOME SECTION (Unchanged) --- */
+.hero-card { background: #e0f2fe; color: #083059; text-align: center; max-width: 800px; }
+.classic-notice { background: #083059; color: white; padding: 15px; border-radius: 10px; margin: 20px auto; max-width: 800px; text-align: center; }
+.classic-stats-grid { display: flex; justify-content: center; gap: 20px; max-width: 800px; margin: auto; }
+.stat-box { padding: 20px; border-radius: 12px; color: white; flex: 1; font-weight: bold; text-align: center; }
+.f1 { background: #3b82f6; } .f2 { background: #f59e0b; } .f3 { background: #22c55e; }
+
+/* --- E-BOOKS (Modified) --- */
+.classic-ebook-layout { display: flex; gap: 20px; max-width: 1100px; margin: auto; }
+.filter-panel { flex: 1; height: fit-content; padding: 20px; }
+.filter-btn-group { display: flex; flex-direction: column; gap: 10px; }
+.filter-btn { width: 100%; padding: 12px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.3s ease; color: #083059; }
+.filter-btn:hover { background: #f0f7ff; }
+.filter-btn.active { background: #083059; color: white; border-color: #083059; }
+.ebook-main { flex: 3; }
+.search-classic { display: flex; align-items: center; padding: 15px 20px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 10px; }
+.search-classic input { border: none; outline: none; margin-left: 10px; width: 100%; font-size: 16px; }
+.classic-book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+.classic-book-card { text-align: center; }
+.book-icon { font-size: 50px; margin-bottom: 10px; color: #007bff; }
+.read-btn { background: #083059; color: white; border: none; padding: 10px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+.read-btn:hover { background: #0056b3; }
+
+/* --- GALLERY (Unchanged) --- */
+.classic-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
+.classic-gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; transition: transform 0.3s ease; }
+.classic-gallery-grid img:hover { transform: scale(1.05); }
+
+/* --- CONTACT SECTION (Simple message box) --- */
+.message-box-container { margin-top: 20px; display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin-left: auto; margin-right: auto; }
+textarea { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; font-size: 15px; min-height: 150px; resize: vertical; }
+
+/* --- ADMIN LOGIN & PORTAL (Simplified) --- */
+.classic-login-card { max-width: 500px; text-align: center; padding: 40px; }
+.admin-menu-btns { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+.menu-btn-dark { background: #083059; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; text-transform: uppercase; transition: background 0.3s; }
+.menu-btn-dark:hover { background: #0056b3; }
+.menu-btn-red { background: #dc3545; color: white; border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; text-transform: uppercase; transition: background 0.3s; }
+.menu-btn-red:hover { background: #c82333; }
+
+/* --- FORM & LOGS SUB-PAGES --- */
+.admin-sub-page .card { max-width: 800px; padding: 30px; }
+.form-card input[type="text"], .form-card input[type="date"] { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; }
+.form-card label { display: block; margin-bottom: 5px; font-weight: 600; color: #555; }
+.submit-btn { width: 100%; margin-top: 15px; }
+
+/* --- TABLES & LOGS --- */
+.log-card { max-width: 950px; }
+.classic-table { width: 100%; border-collapse: collapse; margin-top: 20px; margin-bottom: 30px; }
+.classic-table th { background: #083059; color: white; padding: 15px; text-align: left; }
+.classic-table td { padding: 15px; border-bottom: 1px solid #eee; }
+.overdue-status { color: #dc3545; font-weight: bold; }
+.ontime-status { color: #28a745; font-weight: bold; }
+.back-btn { background: #6c757d; max-width: 200px; display: block; margin-left: auto; margin-right: auto; margin-top: 20px; }
+.back-btn:hover { background: #5a6268; }
+
+/* --- CHARTS PLACEHOLDER --- */
+.charts-placeholder { margin-top: 40px; border-top: 2px solid #eee; padding-top: 20px; text-align: center; }
+.charts-placeholder h3 { color: #083059; margin-bottom: 25px; }
+.chart-box-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+.chart-box { background: #f8f9fa; border: 1px solid #ddd; height: 180px; display: flex; align-items: center; justify-content: center; color: #888; border-radius: 10px; font-weight: bold; }
+
+/* --- GLOBAL UTILITIES --- */
+.classic-btn { background: #083059; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s; display: inline-block; text-align: center;}
+.classic-btn:hover { background: #0056b3; }
+.logout-red { background: #dc3545; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; }
+
+/* --- ANIMATIONS --- */
+.fade { animation: fadeIn 0.5s; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .classic-ebook-layout { flex-direction: column; }
+    .filter-panel { margin-bottom: 20px; }
+    .classic-stats-grid { flex-direction: column; }
+    .stat-box { width: 100%; margin-bottom: 10px; }
+    .classic-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .logo { width: 40px; }
+    .left { left: 10px; } .right { right: 10px; }
+    h1 { font-size: 1.2rem; text-align: center; padding: 0 50px; }
+    .chart-box-grid { grid-template-columns: 1fr; }
+}
+/* --- New Login UI Additions --- */
+.login-choice-card { max-width: 600px; text-align: center; }
+.choice-grid { display: flex; gap: 20px; margin-top: 30px; }
+.choice-box { 
+    flex: 1; padding: 40px 20px; border: 2px solid #ddd; border-radius: 15px; 
+    cursor: pointer; transition: 0.3s; 
+}
+.choice-box:hover { border-color: #007bff; background: #f0f7ff; transform: translateY(-5px); }
+.choice-box i { font-size: 50px; color: #083059; margin-bottom: 15px; }
+
+.auth-card { max-width: 400px; text-align: center; }
+.auth-card input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+
+.student-meta { background: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: left; border-left: 5px solid #007bff; }
+.filter-bar { text-align: right; margin-bottom: 10px; }
+.back-link { background: none; border: none; color: #666; cursor: pointer; margin-top: 15px; }
+/* Payment Modal Styles */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+.modal-content { max-width: 400px; text-align: center; animation: slideIn 0.3s; }
+@keyframes slideIn { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* Button colors */
+.pay-btn { background: #28a745; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+.delete-btn { background: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
+
+/* Include your original styles for tables, headers, and hero-card here */
